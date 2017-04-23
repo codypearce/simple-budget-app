@@ -6,8 +6,11 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body ng-app="budgetApp">
-        <div class="budgetCtrl" ng-Controller="budgetCtrl" >
-            
+        <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
+            <div class="row">
+                <h3>Monthly Income: {{ monthlyIncome }}</h3>
+                <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
+            </div>
         </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
