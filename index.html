@@ -8,15 +8,19 @@
     <body ng-app="budgetApp">
         <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
             <div class="row">
-                <h3>Monthly Income: {{ monthlyIncome }}</h3>
-                <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
+                <div class="col-md-5 col-md-offset-3">
+                  <h3>Monthly Income: {{ monthlyIncome }}</h3>
+                  <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
+                </div>
             </div>
 
             <div class="row">
-                <h3>Expenses: {{expenses}}</h3>
-                <div class="input-group">
-                  <input type="number" class="form-control" ng-model="expenses " placeholder="Expenses">
-                  <span class="input-group-btn"><button class="btn btn-primary" type="button">Add</button></span>
+                <div class="col-md-5 col-md-offset-3">
+                  <h3>Expenses: {{expenses}}</h3>
+                  <div class="input-group">
+                    <input type="number" class="form-control" ng-model="expenses " placeholder="Expenses">
+                    <span class="input-group-btn"><button class="btn btn-primary" type="button">Add</button></span>
+                  </div>
                 </div>
             </div>
         </div>
