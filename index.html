@@ -11,10 +11,13 @@
                 <h3>Monthly Income: {{ monthlyIncome }}</h3>
                 <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
             </div>
-            
+
             <div class="row">
                 <h3>Expenses: {{expenses}}</h3>
-                <input type="number" class="form-control" ng-model="expenses " placeholder="Expenses">
+                <div class="input-group">
+                  <input type="number" class="form-control" ng-model="expenses " placeholder="Expenses">
+                  <span class="input-group-addon">Add</span>
+                </div>
             </div>
         </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
