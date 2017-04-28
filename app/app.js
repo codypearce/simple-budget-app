@@ -10,6 +10,7 @@ app.controller('budgetCtrl', function($scope) {
       $scope.expenses.push(obj);
       $scope.expenseTotal = $scope.expenses.reduce((a,b) => a + b);
       $scope.expense = '';
+      $scope.type = '';
       console.log($scope.expenses);
     }
 })
