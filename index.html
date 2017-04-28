@@ -18,17 +18,17 @@
                 <div class="col-md-5 col-md-offset-3">
                   <h3>Expenses: {{expenseTotal}}</h3>
                   <div class="list-group">
-                    <p class="list-group-item" ng-repeat="expense in expenses">{{expense}}</p>
+                    <p class="list-group-item" ng-repeat="expense in expenses">Amount: {{expense.amount}} Type: {{expense.type}}</p>
                   </div>
                   <div class="row">
                     <div class="col-md-5">
-                        <input type="number" class="form-control" ng-model="expense" placeholder="Expense">
+                        <input type="number" class="form-control" ng-model="amount" placeholder="Amount">
                     </div>
                     <div class="col-md-5">
                       <input type="text" class="form-control" ng-model="type" placeholder="Type">
                     </div>
                     <div class="col-md-2">
-                      <button class="btn btn-primary" type="button" ng-click="addExpense(expense, type)">Add</button>
+                      <button class="btn btn-primary" type="button" ng-click="addExpense(amount, type)">Add</button>
                     </div>
                   </div>
 
