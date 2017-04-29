@@ -19,8 +19,7 @@
                   <h3>Expenses: {{expenseTotal.amount}}</h3>
                   <div class="list-group">
                     <div ng-repeat="expense in expenses">
-                        <p class="list-group-item">Amount: {{expense.amount}} <span class='pull-right'>Type: {{expense.type}}</span></p>
-                        <button type="button" class="btn btn-danger" ng-click='removeExpense(expense)'>Delete</button>
+                        <span class="list-group-item">Amount: {{expense.amount}} <button type="button" class="btn btn-xs btn-danger pull-right" ng-click='removeExpense(expense)'>Delete</button> </span>
                     </div>
 
                   </div>
