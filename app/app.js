@@ -15,4 +15,7 @@ app.controller('budgetCtrl', function($scope) {
       $scope.type = '';
       console.log($scope.expenses);
     }
+    $scope.removeExpense = function(idx) {
+      $scope.expenses.slice(idx, 1);
+    }
 })
