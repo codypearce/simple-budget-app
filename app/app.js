@@ -8,6 +8,7 @@ app.controller('budgetCtrl', function($scope) {
       var obj = {
         amount: amount,
         type: type,
+        remove: false
       };
       $scope.expenses.push(obj);
       $scope.expenseTotal = $scope.expenses.reduce((a,b) => ({amount: a.amount + b.amount}));
@@ -15,7 +16,8 @@ app.controller('budgetCtrl', function($scope) {
       $scope.type = '';
       console.log($scope.expenses);
     }
-    $scope.removeExpense = function(idx) {
-      $scope.expenses.slice(idx, 1);
+    $scope.removeExpense = function(expense) {
+      expense.remove = true;
+      $scope.expenses = $scope.expenses.filter(a => a.remove == false);
     }
 })
