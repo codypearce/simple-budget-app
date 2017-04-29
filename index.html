@@ -16,7 +16,7 @@
 
             <div class="row">
                 <div class="col-md-5 col-md-offset-3">
-                  <h3>Expenses: {{expenseTotal}}</h3>
+                  <h3>Expenses: {{expenseTotal.amount}}</h3>
                   <div class="list-group">
                     <p class="list-group-item" ng-repeat="expense in expenses">Amount: {{expense.amount}} Type: {{expense.type}}</p>
                   </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-3">
-                  <h3>Money leftover: {{monthlyIncome - expenseTotal}}</h3>
+                  <h3>Money leftover: {{monthlyIncome - expenseTotal.amount}}</h3>
                 </div>
             </div>
         </div>
