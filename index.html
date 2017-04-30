@@ -28,7 +28,10 @@
                         <input type="number" class="form-control" ng-model="amount" placeholder="Amount">
                     </div>
                     <div class="col-md-5">
-                      <input type="text" class="form-control" ng-model="type" placeholder="Type">
+                      <select class="form-control" name="type" placehodler="type" ng-model="type">
+                        <option value='' disabled>Type</option>
+                        <option value="Food">Food</option>
+                      </select>
                     </div>
                     <div class="col-md-2">
                       <button class="btn btn-primary" type="button" ng-click="addExpense(amount, type)">Add</button>
