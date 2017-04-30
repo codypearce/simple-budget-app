@@ -18,10 +18,13 @@
                 <div class="col-md-5 col-md-offset-3">
                   <h3>Expenses: {{expenseTotal.amount}}</h3>
                   <div class="list-group">
-                    <div ng-repeat="expense in expenses">
-                        <span class="list-group-item">Amount: {{expense.amount}} <button type="button" class="btn btn-xs btn-danger pull-right" ng-click='removeExpense(expense)'>Delete</button> </span>
+                    <div ng-repeat="expense in expenses" >
+                        <span class="list-group-item row">
+                          <span class='col-md-5'>Amount: {{expense.amount}}</span>
+                          <span class='col-md-5'>{{expense.type}}</span>
+                          <button type="button" class="btn btn-xs btn-danger col-md-2" ng-click='removeExpense(expense)'>Delete</button>
+                        </span>
                     </div>
-
                   </div>
                   <div class="row">
                     <div class="col-md-5">
