@@ -5,6 +5,9 @@ app.controller('budgetCtrl', function($scope) {
     $scope.expenseTotal = 0;
 
     $scope.addExpense = function(amount, type) {
+      if(!amount) {
+        return;
+      }
       var obj = {
         amount: amount,
         type: type,
