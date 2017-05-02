@@ -11,19 +11,20 @@ app.controller('budgetCtrl', function($scope) {
         remove: false
       };
       $scope.expenses.push(obj);
-      $scope.expenseTotal = $scope.expenses.reduce((a,b) => ({amount: a.amount + b.amount}));
+      this.updateTotal();
       $scope.amount = '';
       $scope.type = '';
-      console.log($scope.expenses);
     }
     $scope.removeExpense = function(expense) {
       expense.remove = true;
       $scope.expenses = $scope.expenses.filter(a => a.remove == false);
-      console.log($scope.expenses);
       if($scope.expenses.length === 0) {
         $scope.expenseTotal = 0;
       } else {
-        $scope.expenseTotal = $scope.expenses.reduce((a,b) => ({amount: a.amount + b.amount}));
+        this.updateTotal();
       }
+    }
+    $scope.updateTotal = function() {
+      $scope.expenseTotal = $scope.expenses.reduce((a,b) => ({amount: a.amount + b.amount}));
     }
 })
