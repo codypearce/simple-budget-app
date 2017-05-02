@@ -20,8 +20,9 @@
                   <div class="list-group">
                     <div ng-repeat="expense in expenses" >
                         <span class="list-group-item row">
-                          <span class='col-md-5'>Amount: {{expense.amount}}</span>
-                          <span class='col-md-5'>{{expense.type}}</span>
+                          <span class='col-md-4'>Amount: {{expense.amount}}</span>
+                          <span class='col-md-4'>{{expense.type}}</span>
+                          <button type="button" class="btn btn-xs btn-warning col-md-2" ng-click='editExpense(expense)'>Edit</button>
                           <button type="button" class="btn btn-xs btn-danger col-md-2" ng-click='removeExpense(expense)'>Delete</button>
                         </span>
                     </div>
