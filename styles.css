@@ -1,0 +1,9 @@
+.errorInvalid {
+  color: red;
+  font-size: 11px;
+  display: none;
+}
+
+input.ng-invalid.ng-touched + .errorInvalid {
+  display: block;
+}

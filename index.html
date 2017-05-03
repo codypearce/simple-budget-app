@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Simple Budget App</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body ng-app="budgetApp">
         <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
@@ -29,7 +30,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-5">
-                        <input type="number" class="form-control" ng-model="amount" placeholder="Amount">
+                        <input type="number" class="form-control" ng-model="amount" placeholder="Amount" required>
+                        <span class='errorInvalid'>Please Enter a valid number</span>
                     </div>
                     <div class="col-md-5">
                       <select class="form-control" name="type" placehodler="type" ng-model="type">
