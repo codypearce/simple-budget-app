@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "angular": "^1.6.4",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
   }
 }
