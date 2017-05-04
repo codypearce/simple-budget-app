@@ -26,7 +26,7 @@
                     <div ng-repeat="expense in expenses" >
                         <span class="row">
                           <span class='col-md-5'>${{expense}}</span>
-                          <span class='col-md-5'>{type}}</span>
+                          <span class='col-md-5'>{{types}}</span>
                           <button type="button" class="btn btn-danger col-md-2" ng-click='removeExpense(expense)'>Delete</button>
                         </span>
                     </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-3">
-                  <h3>Money leftover: ${{monthlyIncome - expenseTotal.amount}}</h3>
+                  <h3>Money leftover: ${{monthlyIncome - expenseTotal}}</h3>
                 </div>
             </div>
             <div class="row">
