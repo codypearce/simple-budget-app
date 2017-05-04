@@ -2,18 +2,15 @@ var app = angular.module('budgetApp', ['chart.js']);
 
 app.controller('budgetCtrl', function($scope) {
   $scope.expenses = [];
+  $scope.types = [];
   $scope.expenseTotal = 0;
 
   $scope.addExpense = function(amount, type) {
     if (!amount) {
       return;
     }
-    var obj = {
-      amount: amount,
-      type: type,
-      remove: false,
-    };
-    $scope.expenses.push(obj);
+    $scope.expenses.push(amount);
+    $scope.types.push(type);
     this.updateTotal();
     $scope.amount = '';
     $scope.type = '';
@@ -28,8 +25,6 @@ app.controller('budgetCtrl', function($scope) {
     }
   };
   $scope.updateTotal = function() {
-    $scope.expenseTotal = $scope.expenses.reduce((a, b) => ({
-      amount: a.amount + b.amount,
-    }));
+    $scope.expenseTotal = $scope.expenses.reduce((a, b) => a + b);
   };
 });
