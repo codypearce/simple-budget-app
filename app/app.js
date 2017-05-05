@@ -2,16 +2,22 @@ var app = angular.module('budgetApp', ['chart.js']);
 
 app.controller('budgetCtrl', function($scope) {
   $scope.expenses = [];
-  $scope.types = [];
   $scope.expenseTotal = 0;
+  $scope.amounts = [];
+  $scope.types = [];
 
   $scope.addExpense = function(amount, type) {
     if (!amount) {
       return;
     }
-    $scope.expenses.push(amount);
-    $scope.types.push(type);
+    var obj = {
+      amount: amount,
+      type: type,
+      remove: false,
+    };
+    $scope.expenses.push(obj);
     this.updateTotal();
+    this.updateChartValues();
     $scope.amount = '';
     $scope.type = '';
   };
@@ -25,6 +31,17 @@ app.controller('budgetCtrl', function($scope) {
     }
   };
   $scope.updateTotal = function() {
-    $scope.expenseTotal = $scope.expenses.reduce((a, b) => a + b);
+    $scope.expenseTotal = $scope.expenses.reduce((a, b) => ({
+      amount: a.amount + b.amount,
+    }));
   };
+  $scope.updateChartValues = function() {
+      console.log(this.expenses);
+    for(var i = 0; i <= $scope.expenses; i++) {
+
+      $scope.amounts.push($scope.expenses[i].amount);
+      $scope.types.push($scope.expenses[i].type);
+    }
+
+  }
 });
