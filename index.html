@@ -45,13 +45,19 @@
                         <option value="Student">Student Loans</option>
                         <option value="Entertainment">Entertainment</option>
                         <option value="Transportation">Transportation</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div class="col-md-2">
                       <button class="btn btn-primary" type="button" ng-click="addExpense(amount, type)">Add</button>
                     </div>
                   </div>
-
+                </div>
+                <div class="row">
+                  <div class="col-md-5 col-md-offset-3">
+                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="amounts" chart-labels="types"></canvas>
+                  </div>
                 </div>
             </div>
             <div class="row">
@@ -59,11 +65,7 @@
                   <h3>Money leftover: ${{monthlyIncome - expenseTotal.amount}}</h3>
                 </div>
             </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-3">
-                <canvas id="doughnut" class="chart chart-doughnut" chart-data="amounts" chart-labels="types"></canvas>
-              </div>
-            </div>
+
         </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

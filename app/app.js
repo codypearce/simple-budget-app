@@ -30,6 +30,10 @@ app.controller('budgetCtrl', function($scope) {
       this.updateTotal();
     }
   };
+
+  $scope.addType = function() {
+    console.log('test');
+  };
   $scope.updateTotal = function() {
     $scope.expenseTotal = $scope.expenses.reduce((a, b) => ({
       amount: a.amount + b.amount,
