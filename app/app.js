@@ -36,12 +36,14 @@ app.controller('budgetCtrl', function($scope) {
     }));
   };
   $scope.updateChartValues = function() {
-      console.log(this.expenses);
-    for(var i = 0; i <= $scope.expenses; i++) {
-
-      $scope.amounts.push($scope.expenses[i].amount);
-      $scope.types.push($scope.expenses[i].type);
+    var len = $scope.expenses.length;
+    if(len >= 1) {
+      $scope.amounts = [];
+      $scope.types = [];
+      for(var i = 0; i < len; i++) {
+        $scope.amounts.push($scope.expenses[i].amount);
+        $scope.types.push($scope.expenses[i].type);
+      }
     }
-
   }
 });
