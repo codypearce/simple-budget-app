@@ -9,6 +9,8 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   session = require('express-session');
 
+app.use(express.static(__dirname + '/client'));
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
