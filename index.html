@@ -32,8 +32,8 @@
         <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
             <div class="row">
               <div class="col-md-5 col-md-offset-3">
-                <h1>Budget App</h1>
-                <p>Enter your monthly income, and add your monthly expenses to see the money you have left over each month.</p>
+                <h1>Monthly Budget Planning</h1>
+                <p>Enter your monthly income, and add your monthly expenses to see the money you have left over each month. Add types to your expenses and see a graph detailing where your money is spent the most</p>
               </div>
             </div>
             <div class="row">
@@ -42,10 +42,9 @@
                   <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-5 col-md-offset-3">
-                  <h3>Expenses: ${{expenseTotal.amount}}</h3>
+                  <h3>Monthly Expenses: ${{expenseTotal.amount}}</h3>
                   <div class="">
                     <div class="row">
                       <span class='col-md-5'>Amount</span>
