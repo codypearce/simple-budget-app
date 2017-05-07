@@ -9,6 +9,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular-chart.js": "^1.1.1"
-  }
+    "angular-chart.js": "^1.1.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codypearce/simple-budget-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codypearce/simple-budget-app/issues"
+  },
+  "homepage": "https://github.com/codypearce/simple-budget-app#readme"
 }
