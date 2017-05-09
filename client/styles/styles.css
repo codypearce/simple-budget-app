@@ -7,3 +7,7 @@
 input.ng-invalid.ng-touched + .errorInvalid {
   display: block;
 }
+
+.navbar {
+  margin-bottom: 0;
+}
