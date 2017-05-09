@@ -40,74 +40,77 @@
           <button type="button" name="button" class="btn btn-default">Budget Tool</button>
         </div>
       </div>
-        <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
-            <div class="row">
+      <div class="container budgetCtrl" ng-Controller="budgetCtrl" >
+          <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+              <h1>Monthly Budget Planning</h1>
+              <p>Enter your monthly income, and add your monthly expenses to see the money you have left over each month. Add types to your expenses and see a graph detailing where your money is spent the most</p>
+            </div>
+          </div>
+          <div class="row">
               <div class="col-md-5 col-md-offset-3">
-                <h1>Monthly Budget Planning</h1>
-                <p>Enter your monthly income, and add your monthly expenses to see the money you have left over each month. Add types to your expenses and see a graph detailing where your money is spent the most</p>
+                <h3>Monthly Income: ${{ monthlyIncome }}</h3>
+                <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
               </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-md-offset-3">
-                  <h3>Monthly Income: ${{ monthlyIncome }}</h3>
-                  <input type="number" class="form-control" ng-model="monthlyIncome " placeholder="Monthly Income">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-md-offset-3">
-                  <h3>Monthly Expenses: ${{expenseTotal.amount}}</h3>
-                  <div class="">
-                    <div class="row">
-                      <span class='col-md-5'>Amount</span>
-                      <span class='col-md-5'>Type</span>
-                    </div>
-                    <div ng-repeat="expense in expenses" >
-                        <span class="row">
-                          <span class='col-md-5'>${{expense.amount}}</span>
-                          <span class='col-md-5'>{{expense.type}}</span>
-                          <button type="button" class="btn btn-danger col-md-2" ng-click='removeExpense(expense)'>Delete</button>
-                        </span>
-                    </div>
-                  </div>
+          </div>
+          <div class="row">
+              <div class="col-md-5 col-md-offset-3">
+                <h3>Monthly Expenses: ${{expenseTotal.amount}}</h3>
+                <div class="">
                   <div class="row">
-                    <div class="col-md-5">
-                        <input type="number" class="form-control" ng-model="amount" placeholder="Amount" required>
-                        <span class='errorInvalid'>Please Enter a valid number</span>
-                    </div>
-                    <div class="col-md-5">
-                      <select class="form-control" name="type" placeholder="type" ng-model="type">
-                        <option value='' disabled>Type</option>
-                        <option value="Food">Food</option>
-                        <option value="Housing">Housing</option>
-                        <option value="CC">Credit Card</option>
-                        <option value="Student">Student Loans</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Transportation">Transportation</option>
-                        <option value="Utilities">Utilities</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-primary" type="button" ng-click="addExpense(amount, type)">Add</button>
-                    </div>
+                    <span class='col-md-5'>Amount</span>
+                    <span class='col-md-5'>Type</span>
+                  </div>
+                  <div ng-repeat="expense in expenses" >
+                      <span class="row">
+                        <span class='col-md-5'>${{expense.amount}}</span>
+                        <span class='col-md-5'>{{expense.type}}</span>
+                        <button type="button" class="btn btn-danger col-md-2" ng-click='removeExpense(expense)'>Delete</button>
+                      </span>
                   </div>
                 </div>
-                <div class="col-md-4 ">
-                  <canvas id="doughnut" class="chart chart-doughnut" chart-data="amounts" chart-labels="types"></canvas>
+                <div class="row">
+                  <div class="col-md-5">
+                      <input type="number" class="form-control" ng-model="amount" placeholder="Amount" required>
+                      <span class='errorInvalid'>Please Enter a valid number</span>
+                  </div>
+                  <div class="col-md-5">
+                    <select class="form-control" name="type" placeholder="type" ng-model="type">
+                      <option value='' disabled>Type</option>
+                      <option value="Food">Food</option>
+                      <option value="Housing">Housing</option>
+                      <option value="CC">Credit Card</option>
+                      <option value="Student">Student Loans</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Utilities">Utilities</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-primary" type="button" ng-click="addExpense(amount, type)">Add</button>
+                  </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-md-offset-3">
-                  <h3>Money leftover: ${{monthlyIncome - expenseTotal.amount}}</h3>
-                </div>
-            </div>
+              </div>
+              <div class="col-md-4 ">
+                <canvas id="doughnut" class="chart chart-doughnut" chart-data="amounts" chart-labels="types"></canvas>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-5 col-md-offset-3">
+                <h3>Money leftover: ${{monthlyIncome - expenseTotal.amount}}</h3>
+              </div>
+          </div>
 
-        </div>
-        <script src="lib/jquery/dist/jquery.min.js"></script>
-        <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="lib/angular/angular.min.js"></script>
-        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-        <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
-        <script src="./js/app.js"></script>
+      </div>
+      <div class="footer text-center">
+        <p>Copyright 2017</p>
+      </div>
+      <script src="lib/jquery/dist/jquery.min.js"></script>
+      <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="lib/angular/angular.min.js"></script>
+      <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+      <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+      <script src="./js/app.js"></script>
     </body>
 </html>
