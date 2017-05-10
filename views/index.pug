@@ -1,0 +1,91 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Simple Budget App
+    link(rel='stylesheet', href='lib/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='styles/styles.css')
+  body(ng-app='budgetApp')
+    nav.navbar.navbar-default
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Simple Budget App
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='#') Sign Up
+          li
+            a(href='#') Sign in
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#')
+                | Budget Planning
+                span.sr-only (current)
+        // /.navbar-collapse
+      // /.container-fluid
+    .jumbotron
+      .container
+        h2 Simple Budget App
+        p Basic Budget that calculates budgets based on income and expenses
+        p Sign up to save your info, or use the planning tool
+        button.btn.btn-primary(type='button', name='button') Create Free Account
+        button.btn.btn-default(type='button', name='button') Budget Tool
+    .container.budgetCtrl(ng-controller='budgetCtrl')
+      .row
+        .col-md-5.col-md-offset-3
+          h1 Monthly Budget Planning
+          p
+            | Enter your monthly income, and add your monthly expenses to see the money you have left over each month. Add types to your expenses and see a graph detailing where your money is spent the most
+      .row
+        .col-md-5.col-md-offset-3
+          h3 Monthly Income: ${{ monthlyIncome }}
+          input.form-control(type='number', ng-model='monthlyIncome ', placeholder='Monthly Income')
+      .row
+        .col-md-5.col-md-offset-3
+          h3 Monthly Expenses: ${{expenseTotal.amount}}
+          div
+            .row
+              span.col-md-5 Amount
+              span.col-md-5 Type
+            div(ng-repeat='expense in expenses')
+              span.row
+                span.col-md-5 ${{expense.amount}}
+                span.col-md-5 {{expense.type}}
+                button.btn.btn-danger.col-md-2(type='button', ng-click='removeExpense(expense)') Delete
+          .row
+            .col-md-5
+              input.form-control(type='number', ng-model='amount', placeholder='Amount', required='')
+              span.errorInvalid Please Enter a valid number
+            .col-md-5
+              select.form-control(name='type', placeholder='type', ng-model='type')
+                option(value='', disabled='') Type
+                option(value='Food') Food
+                option(value='Housing') Housing
+                option(value='CC') Credit Card
+                option(value='Student') Student Loans
+                option(value='Entertainment') Entertainment
+                option(value='Transportation') Transportation
+                option(value='Utilities') Utilities
+                option(value='Other') Other
+            .col-md-2
+              button.btn.btn-primary(type='button', ng-click='addExpense(amount, type)') Add
+        .col-md-4
+          canvas#doughnut.chart.chart-doughnut(chart-data='amounts', chart-labels='types')
+      .row
+        .col-md-5.col-md-offset-3
+          h3 Money leftover: ${{monthlyIncome - expenseTotal.amount}}
+    .footer.text-center
+      p Copyright 2017
+    script(src='lib/jquery/dist/jquery.min.js')
+    script(src='lib/bootstrap/dist/js/bootstrap.min.js')
+    script(src='lib/angular/angular.min.js')
+    script(src='node_modules/chart.js/dist/Chart.min.js')
+    script(src='node_modules/angular-chart.js/dist/angular-chart.min.js')
+    script(src='./js/app.js')
