@@ -31,8 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.get('/', function(req, res) {
-  res.sendFile('client/index.html', {root: __dirname});
-});
+require('./app/routes.js')(app, passport);
+
 app.listen(port);
 console.log(`App listening on port ${port}`);
