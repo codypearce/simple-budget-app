@@ -17,5 +17,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "bootstrap": "^3.3.7",
+    "angular-charts": "^0.2.7",
+    "chart.js": "^2.5.0"
   }
 }
