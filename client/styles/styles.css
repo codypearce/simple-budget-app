@@ -11,9 +11,16 @@ input.ng-invalid.ng-touched + .errorInvalid {
 .navbar {
   margin-bottom: 0;
 }
+body {
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
 .footer {
   background: #eee;
-
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .footer p {
   padding: 10px;
