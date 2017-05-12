@@ -2,6 +2,9 @@ module.exports = function(app, passport) {
   app.get('/', function(req, res) {
     res.render('index');
   });
+  app.get('/budget-planning', function(req, res) {
+    res.render('budgetPlanning');
+  });
   app.get('/login', function(req, res) {
     res.render('login', {message: req.flash('loginMessage')});
   });
