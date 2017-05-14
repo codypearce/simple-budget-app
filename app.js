@@ -27,6 +27,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
