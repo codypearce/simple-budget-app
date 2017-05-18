@@ -1,22 +1,29 @@
 extends layout.pug
 
 block body
-  .container
-    div.col-sm-6
-      h1 Dashboard
-      div.well
-        h2 Available Cash
-        p $2000
-      div.well
-        h2 Income
-        p $1000
-      div.well
-        h2 Expenses
-        h3 $1000
-        ul
-          li Expense
-          li Expense
-      a(href='/budget') Budget
-      a(href='/spending') Spending
-      a(href='/history') History
-      a(href='/settings') Settings
+  .container-fluid
+    .row
+      .col-sm-2
+        h2 First Last
+        a(href='/budget') Budget
+        a(href='/spending') Spending
+        a(href='/history') History
+        a(href='/settings') Settings
+
+      div.col-sm-6
+        h1 Dashboard
+        div.well
+          h2 Available Cash
+          p $2000
+    .row
+      .col-sm-4.col-sm-offset-2
+        div.well
+          h2 Income
+          p $1000
+      .col-sm-4
+        div.well
+          h2 Expenses
+          h3 $1000
+          ul
+            li Expense
+            li Expense
