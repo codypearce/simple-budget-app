@@ -100,3 +100,25 @@ body {
 .footer p {
   padding: 10px;
 }
+
+
+
+/* Auth */
+.navbar--auth {
+  background: #3e5366;
+  border-radius: 0;
+}
+.navbar--auth .navbar-nav li a {
+    color: #95aabf;
+  background: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.navbar--auth .navbar-nav li a:hover {
+  color: #95aabf;
+}
+.navbar--auth .navbar-nav .active a {
+  background: none;
+  color: #95aabf;
+  font-weight: bold;
+}
