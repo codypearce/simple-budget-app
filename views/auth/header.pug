@@ -8,11 +8,7 @@ nav.navbar.navbar-default.navbar--auth
         span.icon-bar
         span.icon-bar
       a.navbar-brand(href='/') Simple Budget App
-    ul.nav.navbar-nav.navbar-right
-      li
-        a(href='/profile') Your Profile
-      li
-        a(href='/logout ') Log out
+      
     // Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
@@ -21,6 +17,16 @@ nav.navbar.navbar-default.navbar--auth
             | Dashboard
             span.sr-only (current)
         li
-          a(href='/budget-planning') Budget Planning
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a(href="#" class="dropdown-toggle profile_icon_container" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+            img(src='/images/mushroom.svg' class='profile_icon img-circle')
+          ul.dropdown-menu
+            li
+              a(href='/profile') Profile
+            li
+              a(href='/settings') settings
+            li
+              a(href='/logout') Log out
     // /.navbar-collapse
   // /.container-fluid

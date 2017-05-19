@@ -109,7 +109,7 @@ body {
   border-radius: 0;
 }
 .navbar--auth .navbar-nav li a {
-    color: #95aabf;
+  color: #95aabf;
   background: none;
   text-transform: uppercase;
   font-size: 16px;
@@ -121,4 +121,16 @@ body {
   background: none;
   color: #95aabf;
   font-weight: bold;
+}
+.navbar--auth .navbar-nav .dropdown {
+  padding: 5px;
+}
+.navbar--auth .navbar-nav li .profile_icon_container {
+  padding: 5px;
+  background: purple;
+  border-radius: 100%;
+}
+.profile_icon {
+  width: 30px;
+  height: 30px
 }
