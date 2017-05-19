@@ -17,6 +17,8 @@
     "express": "^4.15.2",
     "express-session": "^1.15.3",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-stylus": "^2.6.0",
     "mongoose": "^4.9.8",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
