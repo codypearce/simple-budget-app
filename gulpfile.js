@@ -8,3 +8,14 @@ gulp.task('css', function() {
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('.tmp'))
 });
+
+gulp.task('js', function() {
+  return gulp.src('./client/js/*.js')
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('.tmp'))
+})
+
+gulp.task('images', function() {
+  return gulp.src('./client/images/**')
+    .pipe(gulp.dest('.tmp/images/'))
+})
