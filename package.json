@@ -4,8 +4,8 @@
   "description": "Simple budget app built on Angular.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "nodemon app.js & gulp watch",
+    "start": "gulp & node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
