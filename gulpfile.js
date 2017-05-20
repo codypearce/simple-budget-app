@@ -19,3 +19,13 @@ gulp.task('images', function() {
   return gulp.src('./client/images/**')
     .pipe(gulp.dest('.tmp/images/'))
 })
+
+
+gulp.task('default', ['css', 'js', 'images']);
+
+
+gulp.task('watch', ['default'], function() {
+  gulp.watch('./client/styles/*.styl', ['css']);
+  gulp.watch('./client/js/*.js', ['js']);
+  gulp.watch('./client/images/**', 'images');
+})
