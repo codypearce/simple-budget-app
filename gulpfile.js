@@ -3,14 +3,14 @@ const gulp = require('gulp'),
       concat = require('gulp-concat');
 
 gulp.task('css', function() {
-	return gulp.src('./client/styles/*.styl')
+	return gulp.src('./client/styles/**/*.styl')
     .pipe(stylus())
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('.tmp'))
 });
 
 gulp.task('js', function() {
-  return gulp.src('./client/js/*.js')
+  return gulp.src('./client/js/**/*.js')
     .pipe(concat('app.js'))
     .pipe(gulp.dest('.tmp'))
 })
@@ -25,7 +25,7 @@ gulp.task('default', ['css', 'js', 'images']);
 
 
 gulp.task('watch', ['default'], function() {
-  gulp.watch('./client/styles/*.styl', ['css']);
-  gulp.watch('./client/js/*.js', ['js']);
+  gulp.watch('./client/styles/**/*.styl', ['css']);
+  gulp.watch('./client/js/**/*.js', ['js']);
   gulp.watch('./client/images/**', ['images']);
 })
