@@ -1,0 +1,58 @@
+.homeHero p {
+  color: #bdc3c7;
+  margin-bottom: 30px;
+}
+.homeHero_btn--primary {
+  background: transparent;
+  border: 2px solid  #eee;
+  margin-right: 20px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  color: #eee;
+  outline: none;
+  transition: ease .9s;
+}
+.homeHero_btn--primary:hover {
+  background: #eee;
+  color: #111;
+  outline: none;
+    border: 2px solid  #eee;
+}
+.homeHero_btn--secondary {
+  background: #bdc3c7;
+  opacity: .75;
+  padding: 15px 20px;
+  border: none;
+  text-transform: uppercase;
+}
+.homeHero {
+  background-image: url(/images/money.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 600px;
+  color: white;
+}
+.homeHero_content {
+  width: 70%;
+  margin: 100px auto;
+}
+.homeHero h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  animation: pulse 10s infinite;
+  animation-delay: 10s;
+  text-shadow: 0 0 30px #63c6ec,
+  0 0 10px rgba(230, 161, 173, 0.41),
+  0 0 100px #E6A1AD,
+  0 0 500px #F36780,
+  5px 9px 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+  0% { opacity: .1;}
+  5% { opacity: 1;}
+  100% { opacity: 1;}
+}

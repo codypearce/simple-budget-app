@@ -11,7 +11,7 @@ const express = require('express'),
 
 mongoose.connect('mongodb://localhost/simple-budget-app');
 
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/.tmp'));
 
 app.use(morgan('dev'));
 app.use(cookieParser());
