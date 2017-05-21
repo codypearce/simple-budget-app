@@ -31,5 +31,5 @@ gulp.task('default', ['css', 'js', 'images', 'lib']);
 gulp.task('watch', ['default'], function() {
   gulp.watch('./client/styles/**/*.styl', ['css']);
   gulp.watch('./client/js/**/*.js', ['js']);
-  gulp.watch('./client/images/**', ['images']);
+  gulp.watch('./client/images/**.*', ['images']);
 })
