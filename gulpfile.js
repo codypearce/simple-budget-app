@@ -20,8 +20,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest('.tmp/images/'))
 })
 
+gulp.task('lib', function() {
+  return gulp.src('./client/lib/**/*')
+    .pipe(gulp.dest('.tmp/lib'))
+})
 
-gulp.task('default', ['css', 'js', 'images']);
+gulp.task('default', ['css', 'js', 'images', 'lib']);
 
 
 gulp.task('watch', ['default'], function() {
